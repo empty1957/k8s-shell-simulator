@@ -1,0 +1,14 @@
+services:
+  simulator:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - simulator-sessions:/workspaces/sessions
+    environment:
+      - SESSIONS_DIR=/workspaces/sessions
+      - SESSION_TTL_SECONDS=7200
+
+volumes:
+  simulator-sessions:

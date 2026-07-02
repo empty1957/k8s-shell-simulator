@@ -1,0 +1,14 @@
+id: "001-create-namespace"
+title: "Create a Namespace"
+difficulty: "easy"
+description: |
+  Create a namespace named `exam`.
+
+  You should be able to verify it with:
+
+  kubectl get namespace exam
+setup:
+  manifests: []
+check:
+  type: "script"
+  script: "checks/001-create-namespace.sh"

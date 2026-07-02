@@ -1,0 +1,18 @@
+id: "002-nginx-deployment"
+title: "Create an nginx Deployment"
+difficulty: "easy"
+description: |
+  In the `exam` namespace, create a Deployment with these properties:
+
+  - name: `web`
+  - image: `nginx:1.25`
+  - replicas: `2`
+
+  Example command:
+
+  kubectl -n exam create deployment web --image=nginx:1.25 --replicas=2
+setup:
+  manifests: []
+check:
+  type: "script"
+  script: "checks/002-nginx-deployment.sh"

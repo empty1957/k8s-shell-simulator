@@ -1,0 +1,20 @@
+id: "003-service"
+title: "Expose the Deployment"
+difficulty: "easy"
+description: |
+  In the `exam` namespace, create a Service with these properties:
+
+  - name: `web-svc`
+  - type: `ClusterIP`
+  - selector: `app=web`
+  - port: `80`
+  - targetPort: `80`
+
+  Example command:
+
+  kubectl -n exam expose deployment web --name=web-svc --port=80 --target-port=80
+setup:
+  manifests: []
+check:
+  type: "script"
+  script: "checks/003-service.sh"

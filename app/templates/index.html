@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kubernetes Shell Simulator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css" />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Kubernetes Shell Simulator</h1>
+        <p id="session-meta">Starting session...</p>
+      </div>
+      <button id="reset-btn" class="danger">Reset Environment</button>
+    </header>
+
+    <main class="layout">
+      <aside class="task-list">
+        <h2>Tasks</h2>
+        <div id="tasks"></div>
+      </aside>
+
+      <section class="workspace">
+        <section class="task-detail">
+          <div class="task-title-row">
+            <div>
+              <h2 id="task-title">Select a task</h2>
+              <span id="task-difficulty"></span>
+            </div>
+            <button id="check-btn">Check Answer</button>
+          </div>
+          <pre id="task-description"></pre>
+          <div id="result" class="result idle">No check has been run yet.</div>
+        </section>
+
+        <section class="terminal-panel">
+          <div id="terminal"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.8.0/lib/xterm-addon-fit.js"></script>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
